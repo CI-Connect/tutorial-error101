@@ -1,7 +1,10 @@
-[title]: - "Troubleshooting Job Errors"
-[TOC]
+---
+ospool:
+    path: htc_workloads/submitting_workloads/tutorial-error101/README.md
+---
 
-# Overview
+# Troubleshooting Job Errors
+
 In this lesson, we'll learn how to troubleshoot jobs that never start or fail in unexpected ways. 
 
 # Troubleshooting techniques
