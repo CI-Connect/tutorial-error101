@@ -14,18 +14,18 @@ In this lesson, we'll learn how to troubleshoot jobs that never start or fail in
 The `condor_q` command shows the status of the jobs and it can be used 
 to diagnose why jobs are not running. Using the `-better-analyze` flag 
 with `condor_q` can show you detailed information about why a job isn't 
-starting on a specific pool. Since OSG Connect sends jobs to many places, we also need to 
+starting on a specific pool. Since the OSPool sends jobs to many places, we also need to 
 specify a pool name with the `-pool` flag.                              
 
 Unless you know a specific pool you would like to query, checking the `flock.opensciencegrid.org` pool is usually a good place to start.
 
 	$ condor_q -better-analyze JOB-ID -pool POOL-NAME
 
-Let's do an example. First we'll need to login as usual, and then load the tutorial *error101*.
+Let's do an example. First, log into your OSPool Access Point. 
 
-	$ ssh username@login.osgconnect.net
-	
-	$ tutorial error101
+Then, download the tutorial materials using the `git clone` command: 
+
+	$ git clone https://github.com/OSGConnect/tutorial-error101
 	$ cd tutorial-error101
 	$ condor_submit error101_job.submit 
 
@@ -113,7 +113,7 @@ Let's break down this error message piece by piece:
 
 This part is quite cryptic, but it simply means that the worker node
 where your job executed (glidein_9371@compute-6-28.tier2 or 10.3.11.39)
-tried to transfer a file to the OSG Connect login node (192.170.227.195)
+tried to transfer a file to the Access Point (192.170.227.195)
 but did not succeed. The next part explains why:
 
 	error reading from /wntmp/condor/compute-6-28/execute/dir_9368/glide_J6I1HT/execute/dir_16393/outputfile: (errno 2) No such file or directory
